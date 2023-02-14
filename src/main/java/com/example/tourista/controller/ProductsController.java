@@ -53,13 +53,27 @@ public class ProductsController {
 
     @GetMapping("/search")
     public ResponseEntity<List<Hotel>> searchHotels(
+        //value = value in url
             @RequestParam(value = "location", required = false) String location,
             @RequestParam(value = "experience", required = false) String experience,
             @RequestParam(value = "pool", required = false) String pool)
     {
-        List<Hotel> hotels = productService.searchHotels(location="karachi", experience="Budget", pool="No");
+        List<Hotel> hotels = productService.searchHotels(location, experience, pool);
         System.out.println("hotels are "+hotels);
         return ResponseEntity.ok(hotels);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Hotel>getHotelById(@PathVariable Long id){
+        
+        try {
+            Hotel hotel = productService.getHotelById(id);
+            return new ResponseEntity<>(hotel, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+
     }
 
 
