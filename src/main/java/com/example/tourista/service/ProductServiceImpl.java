@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Hotel getHotelById(Long id) {
-        return null;
+        return hotelRepository.findById(id).orElseThrow();
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Hotel> searchHotels(String location, String experience, String pool) {
 
-        List<Hotel> searchedHotels =   hotelRepository.findByLocationAndExperienceAndPool(location, experience, pool);
+        List<Hotel> searchedHotels =  hotelRepository.findByLocationAndExperienceAndPool(location, experience, pool);
         System.out.println(searchedHotels);
         return searchedHotels;
 
