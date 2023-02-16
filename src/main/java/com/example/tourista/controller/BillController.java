@@ -22,12 +22,14 @@ public class BillController {
     @GetMapping("/calculate")
     public String calculateExpense(
         @RequestParam(value = "price", required = true) String price,
-        @RequestParam(value = "checkInDate", required = true) String checkInDate,
-        @RequestParam(value = "checkOutDate", required = true) String checkOutDate
+        // @RequestParam(value = "checkInDate", required = true) String checkInDate,
+        // @RequestParam(value = "checkOutDate", required = true) String checkOutDate
+         @RequestParam(value = "days", required = true) String days
+        
     )
     
     {
-           String bill =   billService.CalculateExpense(price, checkInDate, checkOutDate);
+           String bill =   billService.CalculateExpense(price, days);
            System.out.println("total expense is : "+bill);
            return bill;
             

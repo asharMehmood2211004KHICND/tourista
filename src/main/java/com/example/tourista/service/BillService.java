@@ -12,6 +12,7 @@ public interface BillService {
     /// price , cin , cout , ---> expense
 
 
-    public String CalculateExpense(String price,String checkInDate , String checkOutDate);    
+    //public String CalculateExpense(String price,String checkInDate , String checkOutDate);    
+    public String CalculateExpense(String price,String days);    
     
 }
