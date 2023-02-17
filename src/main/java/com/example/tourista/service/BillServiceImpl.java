@@ -2,6 +2,8 @@ package com.example.tourista.service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -9,24 +11,20 @@ import org.springframework.stereotype.Service;
 public class BillServiceImpl implements BillService {
 
     @Override
-    public String CalculateExpense(String price, String days) {
-        // TODO Auto-generated method stub
+    public Map<String, String> CalculateExpense(String price, String days) {
 
-        
-
-
-        // LocalDate cin = LocalDate.parse(checkInDate);
-        // LocalDate cout = LocalDate.parse(checkOutDate);
+        Map<String, String> expenseMap = new HashMap<>();
         long amount = Long.parseLong(price);
         Integer stayDuaration = Integer.parseInt(days);
-        //long daysBetween = ChronoUnit.DAYS.between(cin, cout);
-        //System.out.println(daysBetween);
-        //String stayDuaration = Long.toString(daysBetween);
-        
 
         long totalCostWithoutTax = stayDuaration*amount;
         double totalCostWithTax =  totalCostWithoutTax + (0.12*totalCostWithoutTax);
-        return Double.toString(totalCostWithTax);
+        double tax = 0.12*totalCostWithoutTax;
+        expenseMap.put("withOutTax", Long.toString(totalCostWithoutTax));
+        expenseMap.put("withTax", Long.toString( Math.round(totalCostWithTax)));
+        expenseMap.put("tax",Long.toString(Math.round(tax)));
+
+        return expenseMap;
         
     }
     

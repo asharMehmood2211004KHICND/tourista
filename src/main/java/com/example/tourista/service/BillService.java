@@ -2,6 +2,7 @@ package com.example.tourista.service;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,6 @@ public interface BillService {
 
 
     //public String CalculateExpense(String price,String checkInDate , String checkOutDate);    
-    public String CalculateExpense(String price,String days);    
+    public Map<String, String> CalculateExpense(String price,String days);    
     
 }
