@@ -5,10 +5,16 @@ import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.tourista.entities.Bill;
+import com.example.tourista.repository.BillRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BillServiceImpl implements BillService {
+
+    @Autowired
+    BillRepository billRepository;
 
     @Override
     public Map<String, String> CalculateExpense(String price, String days) {
@@ -27,5 +33,11 @@ public class BillServiceImpl implements BillService {
         return expenseMap;
         
     }
-    
+
+    @Override
+    public Bill saveOrder(Bill bill) {
+        return billRepository.save(bill);
+    }
+
+
 }

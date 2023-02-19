@@ -14,5 +14,9 @@ public interface ProductService {
 
     public List<Hotel> searchHotels(String location,String experience,String pool);
 
+    public Hotel updateHotel(Long id,Hotel hotel);
+
+    void deleteHotel(Long id);
+
 
 }

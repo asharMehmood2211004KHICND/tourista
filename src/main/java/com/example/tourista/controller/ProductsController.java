@@ -76,6 +76,11 @@ public class ProductsController {
 
     }
 
+    @PutMapping("update/{id}")
+    public  Hotel updateHotel(@PathVariable Long id,@RequestBody Hotel hotel){
+        return productService.updateHotel(id,hotel);
+    }
+
 
 
 }

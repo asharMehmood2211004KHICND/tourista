@@ -15,5 +15,6 @@ public interface BillService {
 
     //public String CalculateExpense(String price,String checkInDate , String checkOutDate);    
     public Map<String, String> CalculateExpense(String price,String days);    
-    
+
+    public Bill saveOrder(Bill bill);
 }

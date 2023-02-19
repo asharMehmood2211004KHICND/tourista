@@ -1,6 +1,8 @@
 package com.example.tourista.controller;
 
 //import org.hibernate.mapping.Map;
+import com.example.tourista.entities.Bill;
+import com.example.tourista.entities.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +38,12 @@ public class BillController {
            return calculatedBill;
             
     }
+
+    @PostMapping("/save")
+    public Bill saveBill(@RequestBody Bill bill){
+        return  billService.saveOrder(bill);
+    }
+
 
 
 }

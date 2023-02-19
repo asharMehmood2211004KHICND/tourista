@@ -15,10 +15,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
-/// price , cin , cout , ---> expense
-
-
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
