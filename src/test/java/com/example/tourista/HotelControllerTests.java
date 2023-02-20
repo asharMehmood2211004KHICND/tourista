@@ -3,6 +3,32 @@ package com.example.tourista;
 
 
 
+// import static org.hamcrest.CoreMatchers.is;
+// import static org.mockito.ArgumentMatchers.*;
+// import static org.mockito.BDDMockito.*;
+// import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+// import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+// import java.util.List;
+
+// import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
+
+// import com.example.tourista.entities.Hotel;
+// import com.example.tourista.service.ProductServiceImpl;
+// import org.hibernate.annotations.UpdateTimestamp;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException;
+// import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+// import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+// import org.springframework.boot.test.mock.mockito.MockBean;
+// import org.springframework.http.MediaType;
+// import org.springframework.test.context.TestPropertySource;
+// import org.springframework.test.web.servlet.MockMvc;
+// import org.springframework.test.web.servlet.ResultActions;
+
+// import com.fasterxml.jackson.databind.ObjectMapper;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.*;
@@ -12,21 +38,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.List;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
-
-import com.example.tourista.entities.Hotel;
-import com.example.tourista.service.ProductServiceImpl;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import com.example.tourista.entities.Hotel;
+import com.example.tourista.service.ProductServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
